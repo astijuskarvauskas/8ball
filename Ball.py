@@ -8,10 +8,6 @@ class Ball:
         self.yv = yv
         self.radius = radius
 
-    #def update(self, dt):
-        #self.x += self.xv * dt
-        #self.y += self.yv * dt
-
     def collide(self):
         pass
 
