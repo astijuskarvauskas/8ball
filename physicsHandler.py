@@ -18,8 +18,9 @@ class Physics:
         ball.xv *= FRICTION
         ball.yv *= FRICTION
 
-        if abs(ball.xv) <= STOP_SPEED: ball.xv = 0
-        if abs(ball.yv) <= STOP_SPEED: ball.yv = 0
+        if abs(ball.xv) <= STOP_SPEED or abs(ball.yv) <= STOP_SPEED:
+            ball.xv = 0
+            ball.yv = 0
 
     @staticmethod
     def check_collision(ball):
