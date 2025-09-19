@@ -1,6 +1,5 @@
 import constants as c
 from constants import FRICTION, STOP_SPEED
-from ball import Ball
 
 class Physics:
     def __init__(self):
@@ -30,7 +29,7 @@ class Physics:
             ball.yv = ball.yv * -1
 
     @staticmethod
-    def strike_ball(self, ball, dx, dy, dxy):
+    def strike_ball(ball, m_dx, m_dy):
         # function called on mouse release:
             # dx is displacement from edge of ball to mouse x pos
                 # calc horizontal velocity from this
@@ -39,8 +38,8 @@ class Physics:
             # dxy is total magnitude
                 # calc power multiplier for x and y components from this
 
-        ball.xv = dx
 
-        pass
+        x_vel = (ball.x - m_dx) * c.POWER
+        y_vel = (ball.y - m_dy) * c.POWER
 
-
+        Physics.set_ball_velocity(ball, x_vel, y_vel)
